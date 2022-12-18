@@ -1,0 +1,30 @@
+
+<form class="form-container" (ngSubmit)="addTask()">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Todo-List</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="full-width">
+            <input matInput type="text" [(ngModel)]="task" name="task" />
+          </mat-form-field>
+          <button mat-raised-button="" type="submit" color="accent">
+            Add Task
+          </button>
+        </div>
+        <div class="col-md-6">
+          <ul>
+            <li *ngFor="let t of tasks">
+              {{ t }}
+              <button (click)="removeTask(t)" mat-raised-button color="warn">
+                ❌
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>
